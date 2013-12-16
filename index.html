@@ -1,10 +1,58 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html>
+
 <head>
+
+<title>Conociendo la API Device de PG</title>
+
+
+
 	<link rel="stylesheet" href="style.css">
-	<script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+	
+<script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+//Esperamos que Cordova (PhoneGap) esté cargado
+
+document.addEventListener("deviceready", IniciarAplicacion, false);
+
+// IniciarAplicacion es la funcion que manejadora del evento deviceready
+
+function IniciarAplicacion(){
+
+//la variable elemento guarda una referencia a un elemento
+
+//div donde se muestran las propiedades obtenidas con PhoneGap
+
+var elemento = document.getElementById('propiedades');
+
+//la variable informacion guarda todas las propiedades obtenidas con PhoneGap
+
+var informacion='Nombre del dispositivo ' + device.name + '<br />' +
+
+'Version de Cordova: ' + device.cordova + '<br />' +
+
+'Sistema operativo: ' + device.platform + '<br />' +
+
+'Version: ' + device.version + '<br />'+
+
+'Identificador unico universal: ' + device.uuid + '<br />';
+
+elemento.innerHTML = informacion;
+
+}
+
+</script>
+
 </head>
+
 <body>
+
+<!--Elemento div donde apareceran las propiedades del dipositivo obtenidas a travez de PhoneGap
+
+-->
 
 <h1> Titulo </h1>
 
@@ -13,5 +61,10 @@
 <p> texto en parrafo</p>
 
 
+<div id="propiedades">Cargando datos del dispositivo</div>
+
+
+
 </body>
-</html>
+
+</html> 

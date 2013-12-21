@@ -18,14 +18,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // device APIs are available
 //
 function onDeviceReady() {
-  navigator.notification.alert(
-      'This is my message',     // mensaje (message)
-      alertDismissed,         // función 'callback' (alertCallback)
-      'Game Over',            // titulo (title)
-      'Close'                // nombre del botón (buttonName)
-      );
-      
-      
+
 cont=0;
 x=0;
 y=0;
@@ -54,7 +47,8 @@ watchID = null;
 }
 
 function reiniciarProceso(){
-  alert('reiniciando Proceso');
+var element = document.getElementById('accelerometer');
+element.innerHTML = 'reiniciando proceso';
 }
 
 // onSuccess: Get a snapshot of the current acceleration
@@ -64,18 +58,16 @@ var element = document.getElementById('accelerometer');
 element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 'Acceleration Y: ' + acceleration.y + '<br />' +
 'Acceleration Z: ' + acceleration.z + '<br />' +
-'Timestamp: ' + acceleration.timestamp + '<br />'+
 'cont: ' + cont + '<br />';
 
 if (cont==0){
-  alert(abs(acceleration.z*100));
-x=abs(acceleration.x*100);
-y=abs(acceleration.y*100);
-z=abs(acceleration.z*100);
+x=abs(acceleration.x*10);
+y=abs(acceleration.y*10);
+z=abs(acceleration.z*10);
 }
 else{
-alert(abs(acceleration.x*100));
-     if (x!=(abs(acceleration.x*100)) || y!=(abs(acceleration.y*100)) || z!=(abs(acceleration.z*100)) ){
+alert(abs(acceleration.x*10));
+     if (x!=(abs(acceleration.x*10)) || y!=(abs(acceleration.y*10)) || z!=(abs(acceleration.z*10)) ){
       reiniciarProceso();
       }
 }

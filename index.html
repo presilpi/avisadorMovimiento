@@ -3,12 +3,15 @@
 <head>
 <title>Acceleration Example</title>
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-
+cont=0;
+x=0;
+y=0;
+z=0;
 
 // The watch id references the current `watchAcceleration`
 var watchID = null;
@@ -28,7 +31,7 @@ startWatch();
 function startWatch() {
 
 // Update acceleration every 3 seconds
-var options = { frequency: 3000 };
+var options = { frequency: 15000 };
 
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
@@ -42,6 +45,10 @@ watchID = null;
 }
 }
 
+function reiniciarProceso(){
+  alert('reiniciando Proceso');
+}
+
 // onSuccess: Get a snapshot of the current acceleration
 //
 function onSuccess(acceleration) {
@@ -50,6 +57,19 @@ element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 'Acceleration Y: ' + acceleration.y + '<br />' +
 'Acceleration Z: ' + acceleration.z + '<br />' +
 'Timestamp: ' + acceleration.timestamp + '<br />';
+
+if (cont==0){
+x=abs(acceleration.x*100);
+y=abs(acceleration.y*100);
+z=abs(acceleration.z*100);
+}
+else{
+     if (x!=(abs(acceleration.x*100)) || y!=(abs(acceleration.y*100)) || z!=(abs(acceleration.z*100))  ){
+      reiniciarProceso();
+      }
+}
+
+cont++;
 }
 
 // onError: Failed to get the acceleration
@@ -92,8 +112,9 @@ alert('onError!');
 </div>
 
 
-</div>
+<div id="accelerometer">Waiting for accelerometer...</div>
 
+</div>
 
 
 </body>

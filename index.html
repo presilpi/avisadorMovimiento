@@ -56,7 +56,8 @@ var element = document.getElementById('accelerometer');
 element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 'Acceleration Y: ' + acceleration.y + '<br />' +
 'Acceleration Z: ' + acceleration.z + '<br />' +
-'Timestamp: ' + acceleration.timestamp + '<br />';
+'Timestamp: ' + acceleration.timestamp + '<br />'+
+'cont: ' + cont + '<br />';
 
 if (cont==0){
 x=abs(acceleration.x*100);

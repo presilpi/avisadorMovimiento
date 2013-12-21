@@ -8,11 +8,6 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-cont=0;
-x=0;
-y=0;
-z=0;
-
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 
@@ -23,6 +18,19 @@ document.addEventListener("deviceready", onDeviceReady, false);
 // device APIs are available
 //
 function onDeviceReady() {
+  navigator.notification.alert(
+      'This is my message',     // mensaje (message)
+      alertDismissed,         // función 'callback' (alertCallback)
+      'Game Over',            // titulo (title)
+      'Close'                // nombre del botón (buttonName)
+      );
+      
+      
+cont=0;
+x=0;
+y=0;
+z=0;
+
 startWatch();
 }
 

@@ -3,8 +3,12 @@
 <head>
 <title>Acceleration Example</title>
 
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
+
+
 
 // The watch id references the current `watchAcceleration`
 var watchID = null;
@@ -57,75 +61,42 @@ alert('onError!');
 </script>
 </head>
 <body>
-<div id="accelerometer">Waiting for accelerometer...</div>
+<div id='contenedor'>
+<div id='cabecera'>
+  <div id='usuario'>Nombre del usuario</div>
+  <div id='fecha'>23 Diciembre 2013</div>
+  <div id='dia'>Lunes</div>
+</div>
+<div id='barra'>
+  <img src='img/on.png' id='onOff'>
+  <div id='estado'>Sistema encendido<br>Monitorizando actividad</div>
+</div>
+
+<div id='contenidos'>
+<div id='fase1' class='bgGris'>
+  <div class='izqBg1'>&nbsp;</div>
+  <div class='izq1'> AVISO DE 15 SEGUNDOS</div>  
+</div>
+<div id='fase2' class='bgBlanco'>
+  <div class='izqBg2'>&nbsp;</div>
+  <div class='izq1'> AVISO DE 30 SEGUNDOS</div>  
+</div>
+<div id='fase3' class='bgGris'>
+  <div class='izqBg3'>&nbsp;</div>
+  <div class='izq1'> AVISO DE 45 SEGUNDOS</div>  
+</div>
+<div id='fase4' class='bgBlanco'>
+  <div class='izqBg4'>&nbsp;</div>
+  <div class='izq1'> AVISO DE 60 SEGUNDOS</div>  
+</div>
+</div>
+
+
+</div>
+
+
+
 </body>
 </html>
 
-<!--
-<!DOCTYPE html>
 
-<html>
-
-<head>
-
-<title>Conociendo la API Device de PG</title>
-
-
-
-	<link rel="stylesheet" href="style.css">
-	
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
-<script type="text/javascript" charset="utf-8">
-
-//Esperamos que Cordova (PhoneGap) esté cargado
-
-document.addEventListener("deviceready", IniciarAplicacion, false);
-
-// IniciarAplicacion es la funcion que manejadora del evento deviceready
-
-function IniciarAplicacion(){
-
-//la variable elemento guarda una referencia a un elemento
-
-//div donde se muestran las propiedades obtenidas con PhoneGap
-
-var elemento = document.getElementById('propiedades');
-
-//la variable informacion guarda todas las propiedades obtenidas con PhoneGap
-
-var informacion='Nombre del dispositivo ' + device.name + '<br />' +
-
-'Version de Cordova: ' + device.cordova + '<br />' +
-
-'Sistema operativo: ' + device.platform + '<br />' +
-
-'Version: ' + device.version + '<br />'+
-
-'Identificador unico universal: ' + device.uuid + '<br />';
-
-elemento.innerHTML = informacion;
-
-}
-
-</script>
-
-</head>
-
-<body>
-
-<h1> Titulo </h1>
-
-<h2>Subtitulo</h2>
-
-<p> texto en parrafo</p>
-
-
-<div id="propiedades">Cargando datos del dispositivo</div>
-
-
-
-</body>
-
-</html> 
--->

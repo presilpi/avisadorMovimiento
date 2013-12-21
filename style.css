@@ -1,9 +1,120 @@
-h1 {
-  color:#f00;
+
+@font-face {
+    font-family: 'camelliadeeregular';
+    src: url('http://www.escalarencantabria.com/android/camelliadee-webfont.eot');
+    src: url('http://www.escalarencantabria.com/android/camelliadee-webfont.eot?#iefix') format('embedded-opentype'),
+         url('http://www.escalarencantabria.com/android/camelliadee-webfont.woff') format('woff'),
+         url('http://www.escalarencantabria.com/android/camelliadee-webfont.ttf') format('truetype'),
+         url('http://www.escalarencantabria.com/android/camelliadee-webfont.svg#camelliadeeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
-h2 {
-  color:#0f0;
-  }
-p{
-  color:#00f;
+body{
+    background: none repeat scroll 0 0 #D9D9D9;
+    color: #FFFFFF;
+    font-family: 'camelliadeeregular';
+    margin: 0;
+    padding: 0;
+} 
+
+#contenedor{
+ width:500px;
 }
+
+#cabecera{
+ height:150px;
+ background:  url('http://www.escalarencantabria.com/android/img/bgTop.png') repeat-y center;
+}
+
+#usuario{
+  font-size:20px;
+  padding:10px;
+}
+#fecha{
+  font-size:55px;
+  text-align:center;
+}
+#dia{
+  font-size:16px;
+  text-align:right;
+  padding:10px;
+}
+
+#barra{
+ height:53px;
+ background:  url('http://www.escalarencantabria.com/android/img/bgBarra.png') repeat-y center;
+ width:100%;
+}
+#barra img{
+ float:left;
+}
+
+#estado{
+ height:53px;
+ float:left;
+     margin: 9px;
+}
+
+#contenidos{
+ margin-top:6px;
+ color:#e1714a;
+}
+
+.bgGris {
+    background-color: #F1F1F1;
+    float: left;
+    width: 100%;
+}
+
+.bgBlanco {
+    background-color: #FFF;
+    float: left;
+    width: 100%;
+}
+
+
+
+.izqBg1{
+ width:6px;
+ min-width:6px;
+ background-color:#ffc867;
+ float:left;
+ height:110px;;
+}
+
+.izq1{
+    background: url("http://www.escalarencantabria.com/android/img/estado.png") no-repeat scroll left top;
+    font-size: 25px;
+    height: 100px;
+    padding: 10px 0 0 80px;
+}
+
+
+.izqBg2{
+ width:6px;
+ min-width:6px;
+ background-color:#f9b661;
+ float:left;
+ height:110px;;
+}
+
+.izqBg3{
+ width:6px;
+ min-width:6px;
+ background-color:#e1714a;
+ float:left;
+ height:110px;;
+}
+
+.izqBg4{
+ width:6px;
+ min-width:6px;
+ background-color:#d44a3e;
+ float:left;
+ height:110px;;
+}
+
+
+
+

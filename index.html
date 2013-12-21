@@ -65,7 +65,8 @@ y=abs(acceleration.y*100);
 z=abs(acceleration.z*100);
 }
 else{
-     if (x!=(abs(acceleration.x*100)) || y!=(abs(acceleration.y*100)) || z!=(abs(acceleration.z*100))  ){
+alert(abs(acceleration.x*100));
+     if (x!=(abs(acceleration.x*100)) || y!=(abs(acceleration.y*100)) || z!=(abs(acceleration.z*100)) ){
       reiniciarProceso();
       }
 }
@@ -96,19 +97,19 @@ alert('onError!');
 <div id='contenidos'>
 <div id='fase1' class='bgGris'>
   <div class='izqBg1'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 15 SEGUNDOS</div>  
+  <div class='izq1'> AVISO DE 15 SEGUNDOS</div>
 </div>
 <div id='fase2' class='bgBlanco'>
   <div class='izqBg2'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 30 SEGUNDOS</div>  
+  <div class='izq1'> AVISO DE 30 SEGUNDOS</div>
 </div>
 <div id='fase3' class='bgGris'>
   <div class='izqBg3'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 45 SEGUNDOS</div>  
+  <div class='izq1'> AVISO DE 45 SEGUNDOS</div>
 </div>
 <div id='fase4' class='bgBlanco'>
   <div class='izqBg4'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 60 SEGUNDOS</div>  
+  <div class='izq1'> AVISO DE 60 SEGUNDOS</div>
 </div>
 </div>
 
@@ -120,5 +121,3 @@ alert('onError!');
 
 </body>
 </html>
-
-

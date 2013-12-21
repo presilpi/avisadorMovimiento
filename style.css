@@ -19,12 +19,13 @@ body{
 } 
 
 #contenedor{
- width:500px;
+ width:100%;
 }
 
 #cabecera{
  height:150px;
  background:  url('http://www.escalarencantabria.com/android/img/bgTop.png') repeat-y center;
+    background-size:100%;
 }
 
 #usuario{
@@ -44,6 +45,7 @@ body{
 #barra{
  height:53px;
  background:  url('http://www.escalarencantabria.com/android/img/bgBarra.png') repeat-y center;
+    background-size:100%;
  width:100%;
 }
 #barra img{

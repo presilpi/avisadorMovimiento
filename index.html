@@ -54,8 +54,11 @@ document.getElementById('accelerometer').innerHTML = 'reiniciando proceso';
 // onSuccess: Get a snapshot of the current acceleration
 //
 function onSuccess(acceleration) {
-//var element = document.getElementById('accelerometer');
-//element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' + 'Acceleration Y: ' + acceleration.y + '<br />' + 'Acceleration Z: ' + acceleration.z + '<br />' + 'cont: ' + cont + '<br />';
+var element = document.getElementById('accelerometer');
+element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
+'Acceleration Y: ' + acceleration.y + '<br />' +
+'Acceleration Z: ' + acceleration.z + '<br />' +
+'cont: ' + cont + '<br />';
 
 if (cont==0){
 x=abs(acceleration.x*10);
@@ -67,11 +70,6 @@ else{
       reiniciarProceso();
       }
 }
-var element = document.getElementById('accelerometer');
-element.innerHTML = 'Acceleration X: ' + x + '<br />' +
-'Acceleration Y: ' + y + '<br />' +
-'Acceleration Z: ' + z + '<br />' +
-'cont: ' + cont + '<br />';
 
 cont++;
 }

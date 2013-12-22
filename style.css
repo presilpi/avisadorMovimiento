@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'camelliadeeregular';
     src: url('http://www.escalarencantabria.com/android/camelliadee-webfont.eot');
@@ -118,5 +117,9 @@ body{
 }
 
 
+
+#accelerometer{
+font-family:arial;
+}
 
 

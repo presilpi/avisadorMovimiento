@@ -11,6 +11,11 @@
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 
+cont=0;
+x=0;
+y=0;
+z=0;
+
 // Wait for device API libraries to load
 //
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -19,10 +24,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //
 function onDeviceReady() {
 
-cont=0;
-x=0;
-y=0;
-z=0;
 
 startWatch();
 }
@@ -32,7 +33,7 @@ startWatch();
 function startWatch() {
 
 // Update acceleration every 3 seconds
-var options = { frequency: 15000 };
+var options = { frequency: 3000 };
 
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 }
@@ -47,8 +48,7 @@ watchID = null;
 }
 
 function reiniciarProceso(){
-var element = document.getElementById('accelerometer');
-element.innerHTML = 'reiniciando proceso';
+document.getElementById('accelerometer').innerHTML = 'reiniciando proceso';
 }
 
 // onSuccess: Get a snapshot of the current acceleration
@@ -66,7 +66,6 @@ y=abs(acceleration.y*10);
 z=abs(acceleration.z*10);
 }
 else{
-alert(abs(acceleration.x*10));
      if (x!=(abs(acceleration.x*10)) || y!=(abs(acceleration.y*10)) || z!=(abs(acceleration.z*10)) ){
       reiniciarProceso();
       }

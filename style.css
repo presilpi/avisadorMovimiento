@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'camelliadeeregular';
     src: url('http://www.escalarencantabria.com/android/camelliadee-webfont.eot');
@@ -32,7 +33,7 @@ body{
   padding:10px;
 }
 #fecha{
-  font-size:40px;
+  font-size:55px;
   text-align:center;
 }
 #dia{
@@ -85,6 +86,7 @@ body{
 }
 
 .izq1{
+position:relative;
     background: url("http://www.escalarencantabria.com/android/img/estado.png") no-repeat scroll left top;
     font-size: 25px;
     height: 100px;
@@ -116,10 +118,25 @@ body{
  height:110px;;
 }
 
+#iconGreen1, #iconGreen2, #iconGreen3, #iconGreen4{
+position:absolute;
+top:31px;
+left:33px;
+ background-color:#0a0;
+ border-radius: 15px;
+ width:12px;
+ height:12px;
+ display:none;
+}
+
+#ok1, #ok2, #ok3, #ok4{
+ color:#0a0;
+ display:none;
+}
+
 
 
 #accelerometer{
 font-family:arial;
 }
-
 

@@ -11,6 +11,7 @@
 // The watch id references the current `watchAcceleration`
 var watchID = null;
 
+inicial=1;
 cont=0;
 x=0;
 y=0;
@@ -24,6 +25,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //
 function onDeviceReady() {
 
+var element = document.getElementById('accelerometer');
+element.innerHTML = 'onDeviceReay ... <br />';
+
 
 startWatch();
 }
@@ -33,9 +37,10 @@ startWatch();
 function startWatch() {
 
 // Update acceleration every 3 seconds
-var options = { frequency: 3000 };
+var options = { frequency: 15000 };
 
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+
 }
 
 // Stop watching the acceleration
@@ -49,11 +54,34 @@ watchID = null;
 
 function reiniciarProceso(){
 document.getElementById('accelerometer').innerHTML = 'reiniciando proceso';
+document.getElementById('ok1').style.display = "none";
+document.getElementById('ok2').style.display = "none";
+document.getElementById('ok3').style.display = "none";
+document.getElementById('ok4').style.display = "none";
+
+document.getElementById('iconGreen1').style.display = "none";
+document.getElementById('iconGreen2').style.display = "none";
+document.getElementById('iconGreen3').style.display = "none";
+document.getElementById('iconGreen4').style.display = "none";
+
+//alert('reiniciando');
 }
 
 // onSuccess: Get a snapshot of the current acceleration
 //
 function onSuccess(acceleration) {
+
+if (inicial==1){
+x=Math.floor((acceleration.x)*100);
+y=Math.floor((acceleration.y)*100);
+z=Math.floor((acceleration.z)*100);
+
+  inicial=0;
+}
+
+cont=cont+1;
+//alert("onsuccess"+cont);
+
 var element = document.getElementById('accelerometer');
 element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 'Acceleration Y: ' + acceleration.y + '<br />' +
@@ -61,17 +89,43 @@ element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 'cont: ' + cont + '<br />';
 
 if (cont==0){
-x=abs(acceleration.x*10);
-y=abs(acceleration.y*10);
-z=abs(acceleration.z*10);
+//      alert("x :"+Math.floor((acceleration.x)*100));
+x=Math.floor((acceleration.x)*100);
+y=Math.floor((acceleration.y)*100);
+z=Math.floor((acceleration.z)*100);
 }
 else{
-     if (x!=(abs(acceleration.x*10)) || y!=(abs(acceleration.y*10)) || z!=(abs(acceleration.z*10)) ){
+// alert("math.floor"+Math.floor((acceleration.x)*100));
+       if (x!=(Math.floor((acceleration.x)*100)) || y!=(Math.floor((acceleration.y)*100)) || z!=(Math.floor((acceleration.z)*100)) ){
+      cont=0;
+      
+ //     alert("reiniciando proceso cont="+cont);      
       reiniciarProceso();
       }
+      else{
+        if (cont==1) {
+            document.getElementById('iconGreen1').style.display = "block";
+            document.getElementById('ok1').style.display = "block";
+           }
+        if (cont==2) {
+            document.getElementById('iconGreen2').style.display = "block";
+            document.getElementById('ok2').style.display = "block";
+            }
+        if (cont==3) {
+            document.getElementById('iconGreen3').style.display = "block";
+            document.getElementById('ok3').style.display = "block";
+            }
+        if (cont==4) {
+            document.getElementById('iconGreen4').style.display = "block";
+            document.getElementById('ok4').style.display = "block";
+            }
+      
+      }
+      x=Math.floor((acceleration.x)*100);
+y=Math.floor((acceleration.y)*100);
+z=Math.floor((acceleration.z)*100);
 }
 
-cont++;
 }
 
 // onError: Failed to get the acceleration
@@ -97,19 +151,19 @@ alert('onError!');
 <div id='contenidos'>
 <div id='fase1' class='bgGris'>
   <div class='izqBg1'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 15 SEGUNDOS</div>
+  <div class='izq1'><div id='iconGreen1'></div> AVISO DE 15 SEGUNDOS <span id='ok1'>FASE SUPERADA</span></div>
 </div>
 <div id='fase2' class='bgBlanco'>
   <div class='izqBg2'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 30 SEGUNDOS</div>
+  <div class='izq1'><div id='iconGreen2'></div> AVISO DE 30 SEGUNDOS<span id='ok2'>FASE SUPERADA</span></div>
 </div>
 <div id='fase3' class='bgGris'>
   <div class='izqBg3'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 45 SEGUNDOS</div>
+  <div class='izq1'><div id='iconGreen3'></div> AVISO DE 45 SEGUNDOS<span id='ok3'>FASE SUPERADA</span></div>
 </div>
 <div id='fase4' class='bgBlanco'>
   <div class='izqBg4'>&nbsp;</div>
-  <div class='izq1'> AVISO DE 60 SEGUNDOS</div>
+  <div class='izq1'><div id='iconGreen4'></div> AVISO DE 60 SEGUNDOS<span id='ok4'>FASE SUPERADA: ENVIANDO AVISO</span></div>
 </div>
 </div>
 

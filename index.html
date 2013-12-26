@@ -37,7 +37,7 @@ startWatch();
 function startWatch() {
 
 // Update acceleration every 3 seconds
-var options = { frequency: 15000 };
+var options = { frequency: 3000 };
 
 watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 
@@ -53,7 +53,7 @@ watchID = null;
 }
 
 function reiniciarProceso(){
-document.getElementById('accelerometer').innerHTML = 'reiniciando proceso';
+document.getElementById('accelerometer').innerHTML = 'reiniciando proceso x:'+x;
 document.getElementById('ok1').style.display = "none";
 document.getElementById('ok2').style.display = "none";
 document.getElementById('ok3').style.display = "none";
@@ -72,9 +72,9 @@ document.getElementById('iconGreen4').style.display = "none";
 function onSuccess(acceleration) {
 
 if (inicial==1){
-x=Math.floor((acceleration.x)*100);
-y=Math.floor((acceleration.y)*100);
-z=Math.floor((acceleration.z)*100);
+x=Math.floor((acceleration.x)*10);
+y=Math.floor((acceleration.y)*10);
+z=Math.floor((acceleration.z)*10);
 
   inicial=0;
 }
@@ -90,13 +90,13 @@ element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 
 if (cont==0){
 //      alert("x :"+Math.floor((acceleration.x)*100));
-x=Math.floor((acceleration.x)*100);
-y=Math.floor((acceleration.y)*100);
-z=Math.floor((acceleration.z)*100);
+x=Math.floor((acceleration.x)*10);
+y=Math.floor((acceleration.y)*10);
+z=Math.floor((acceleration.z)*10);
 }
 else{
 // alert("math.floor"+Math.floor((acceleration.x)*100));
-       if (x!=(Math.floor((acceleration.x)*100)) || y!=(Math.floor((acceleration.y)*100)) || z!=(Math.floor((acceleration.z)*100)) ){
+       if (x!=(Math.floor((acceleration.x)*10)) || y!=(Math.floor((acceleration.y)*10)) || z!=(Math.floor((acceleration.z)*10)) ){
       cont=0;
       
  //     alert("reiniciando proceso cont="+cont);      
@@ -121,9 +121,9 @@ else{
             }
       
       }
-      x=Math.floor((acceleration.x)*100);
-y=Math.floor((acceleration.y)*100);
-z=Math.floor((acceleration.z)*100);
+x=Math.floor((acceleration.x)*10);
+y=Math.floor((acceleration.y)*10);
+z=Math.floor((acceleration.z)*10);
 }
 
 }

@@ -29,15 +29,15 @@ body{
 }
 
 #usuario{
-  font-size:20px;
+  font-size:16px;
   padding:10px;
 }
 #fecha{
-  font-size:55px;
+  font-size:45px;
   text-align:center;
 }
 #dia{
-  font-size:16px;
+  font-size:14px;
   text-align:right;
   padding:10px;
 }

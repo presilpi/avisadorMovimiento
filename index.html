@@ -35,6 +35,7 @@ startWatch();
 // Start watching the acceleration
 //
 function startWatch() {
+document.getElementById('barra').innerHTML = ' <a href="javascript:stopWatch();"><img src="http://www.escalarencantabria.com/android/img/on.png" id="onOff"></a><div id="estado">Sistema encendido<br>Monitorizando actividad</div>';
 
 // Update acceleration every 3 seconds
 var options = { frequency: 3000 };
@@ -49,6 +50,9 @@ function stopWatch() {
 if (watchID) {
 navigator.accelerometer.clearWatch(watchID);
 watchID = null;
+//Actualizamos el boton y texto
+document.getElementById('barra').innerHTML = ' <a href="startWatch();"><img src="http://www.escalarencantabria.com/android/img/off.png" id="onOff"></a><div id="estado">Sistema parado</div>';
+
 }
 }
 
@@ -72,9 +76,9 @@ document.getElementById('iconGreen4').style.display = "none";
 function onSuccess(acceleration) {
 
 if (inicial==1){
-x=Math.floor((acceleration.x)*10);
-y=Math.floor((acceleration.y)*10);
-z=Math.floor((acceleration.z)*10);
+x=Math.floor((acceleration.x)*5);
+y=Math.floor((acceleration.y)*5);
+z=Math.floor((acceleration.z)*5);
 
   inicial=0;
 }
@@ -90,13 +94,13 @@ element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br />' +
 
 if (cont==0){
 //      alert("x :"+Math.floor((acceleration.x)*100));
-x=Math.floor((acceleration.x)*10);
-y=Math.floor((acceleration.y)*10);
-z=Math.floor((acceleration.z)*10);
+x=Math.floor((acceleration.x)*5);
+y=Math.floor((acceleration.y)*5);
+z=Math.floor((acceleration.z)*5);
 }
 else{
 // alert("math.floor"+Math.floor((acceleration.x)*100));
-       if (x!=(Math.floor((acceleration.x)*10)) || y!=(Math.floor((acceleration.y)*10)) || z!=(Math.floor((acceleration.z)*10)) ){
+       if (x!=(Math.floor((acceleration.x)*5)) || y!=(Math.floor((acceleration.y)*5)) || z!=(Math.floor((acceleration.z)*5)) ){
       cont=0;
       
  //     alert("reiniciando proceso cont="+cont);      
@@ -121,9 +125,9 @@ else{
             }
       
       }
-x=Math.floor((acceleration.x)*10);
-y=Math.floor((acceleration.y)*10);
-z=Math.floor((acceleration.z)*10);
+x=Math.floor((acceleration.x)*5);
+y=Math.floor((acceleration.y)*5);
+z=Math.floor((acceleration.z)*5);
 }
 
 }
@@ -144,7 +148,7 @@ alert('onError!');
   <div id='dia'>Lunes</div>
 </div>
 <div id='barra'>
-  <img src='http://www.escalarencantabria.com/android/img/on.png' id='onOff'>
+  <a href=''><img src='http://www.escalarencantabria.com/android/img/on.png' id='onOff'></a>
   <div id='estado'>Sistema encendido<br>Monitorizando actividad</div>
 </div>
 

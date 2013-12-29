@@ -35,7 +35,7 @@ startWatch();
 // Start watching the acceleration
 //
 function startWatch() {
-document.getElementById('barra').innerHTML = ' <a href="javascript:stopWatch();"><img src="./img/on.png" id="onOff"></a><div id="estado">Sistema encendido<br>Monitorizando actividad</div>';
+document.getElementById('barra').innerHTML = ' <a href="javascript:stopWatch();"><img src="http://www.escalarencantabria.com/android/img/on.png" id="onOff"></a><div id="estado">Sistema encendido<br>Monitorizando actividad</div>';
 
 // Update acceleration every 3 seconds
 var options = { frequency: 3000 };
@@ -51,7 +51,7 @@ if (watchID) {
 navigator.accelerometer.clearWatch(watchID);
 watchID = null;
 //Actualizamos el boton y texto
-document.getElementById('barra').innerHTML = ' <a href="startWatch();"><img src="./img/off.png" id="onOff"></a><div id="estado">Sistema parado</div>';
+document.getElementById('barra').innerHTML = ' <a href="startWatch();"><img src="http://www.escalarencantabria.com/android/img/off.png" id="onOff"></a><div id="estado">Sistema parado</div>';
 
 }
 }
@@ -148,7 +148,7 @@ alert('onError!');
   <div id='dia'>Lunes</div>
 </div>
 <div id='barra'>
-  <a href=''><img src='./img/on.png' id='onOff'></a>
+  <a href=''><img src='http://www.escalarencantabria.com/android/img/on.png' id='onOff'></a>
   <div id='estado'>Sistema encendido<br>Monitorizando actividad</div>
 </div>
 

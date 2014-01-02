@@ -28,6 +28,10 @@ function onDeviceReady() {
 var element = document.getElementById('accelerometer');
 element.innerHTML = 'onDeviceReay ... <br />';
 
+var divUsuario = document.getElementById('usuario');
+divUsuario.innerHTML = device.uuid;
+
+
 
 startWatch();
 }

@@ -8,7 +8,18 @@
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-        function playAudio(src) {
+function comprobarConexion(){
+var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE){
+                alert('No Internet');
+    }else{
+         alert('Internet Connection there');
+         }
+}
+
+
+
+function playAudio(src) {
             if (my_media == null) {
                 // Create Media object from src
                 my_media = new Media(src, onSuccessMedia, onErrorMedia);
@@ -31,8 +42,6 @@
 
 
 function activarAlarma(){
-
-
 if (watchID) {
 navigator.accelerometer.clearWatch(watchID);
 watchID = null;
@@ -71,7 +80,7 @@ element.innerHTML = 'onDeviceReay ... <br />';
 var divUsuario = document.getElementById('usuario');
 divUsuario.innerHTML = device.uuid;
 
-
+comprobarConexion();
 
 startWatch();
 }

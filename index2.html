@@ -9,10 +9,6 @@
 <script type="text/javascript" charset="utf-8" src="./js/jquery-1.10.1.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 
- var my_media = null;
- var mediaTimer = null;
-
-
 
 function comprobarConexion(){
 
@@ -24,7 +20,7 @@ var networkState = navigator.network.connection.type;
        //  alert('Internet Connection there:');
          
      $.ajax({
-     url:"http://escalarencantabria.com/android/WService1.php",
+     url:"http://escalarencantabria.juan/android/WService1.php",
      data: { device: device.uuid },
      dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
      success:function(json){
@@ -40,13 +36,13 @@ var networkState = navigator.network.connection.type;
        document.getElementById("usuario").innerHTML=person;
        
                $.ajax({
-         url:"http://escalarencantabria.com/android/WServiceInsert.php",
+         url:"http://escalarencantabria.juan/android/WServiceInsert.php",
          data: { device: device.uuid, nombre:person},
          dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
          success:function(json1){
          }
          });
- 
+
        } 
      }
      
@@ -63,21 +59,21 @@ var networkState = navigator.network.connection.type;
 
 
 function playAudio(src) {
- //           if (my_media == null) {
+            if (my_media == null) {
                 // Create Media object from src
                 my_media = new Media(src, onSuccessMedia, onErrorMedia);
-//            } // else play current audio
+            } // else play current audio
             // Play audio
             my_media.play();
+
         }
-        
-function onSuccessMedia() {
+        function onSuccessMedia() {
             console.log("playAudio():Audio Success");
         }
 
         // onError Callback
         //
-function onError(errorMedia) {
+        function onError(errorMedia) {
             alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
         }
@@ -94,8 +90,7 @@ document.getElementById('barra').innerHTML = ' <a href="javascript:startWatch();
 cont=0;
 
 }
-// playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
- playAudio("android_asset/www/1.mp3");
+ playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
 
 
 }
@@ -122,6 +117,20 @@ var element = document.getElementById('accelerometer');
 element.innerHTML = 'onDeviceReay ... <br />';
 
 
+
+/////////////////////////////
+
+	var originalFontSize = 24;
+	var sectionWidth = $('#tiempo').width();
+
+	$('#tiempo span').each(function(){
+		var spanWidth = $(this).width();
+		var newFontSize = (sectionWidth/spanWidth) * originalFontSize;
+		$(this).css({"font-size" : newFontSize, "line-height" : newFontSize/1.2 + "px"});
+	});
+
+
+////////////////////////////
 comprobarConexion();
 
 startWatch();
@@ -204,7 +213,7 @@ else{
       }
       else{
         if (cont==1) {
-            document.getElementById('iconGreen1').style.display = "block";
+ //           document.getElementById('iconGreen1').style.display = "block";
             document.getElementById('ok1').style.display = "block";
            }
         if (cont==2) {
@@ -257,6 +266,7 @@ document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYe
 <div id='barra'></div>
 
 <div id='contenidos'>
+<!--
 <div id='fase1' class='bgGris'>
   <div class='izqBg1'>&nbsp;</div>
   <div class='izq1'><div id='iconGreen1'></div> AVISO DE 15 SEGUNDOS<span id='ok1'>FASE SUPERADA</span></div>
@@ -274,13 +284,23 @@ document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYe
   <div class='izq1'><div id='iconGreen4'></div> AVISO DE 60 SEGUNDOS<span id='ok4'>FASE SUPERADA: ENVIANDO AVISO</span></div>
 </div>
 </div>
+-->
+
+<div id='tiempo'><span class='texto1'>Comprobacion de los 15 sgs</span><br><span id='ok1'>FASE SUPERADA</span></div>
+<div class="spinner">
+  <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+  <div class="rect5"></div>
+</div>
 
 
 <div id="accelerometer">Waiting for accelerometer...</div>
+</div>
 
-</div>
-<div id="divAudio"></div>
-</div>
+
+
 
 </script>
 </body>

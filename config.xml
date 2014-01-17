@@ -17,8 +17,57 @@
         Hardeep Shoker 
     </author>
 
+   <!-- ICONS -->
+        
+    <icon src="img/icons/android/icon.png" /> <!-- default 512 pixels -->
+
+    <icon src="img/icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" /> <!-- 36 pixels -->
+    <icon src="img/icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" /> <!-- 48 pixels -->
+    <icon src="img/icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" /> <!-- 72 pixels -->
+    <icon src="img/icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" /> <!-- 96 pixels -->
+    <icon src="img/icons/android/xxhdpi.png" gap:platform="android" gap:density="xxhdpi" /> <!-- 144 pixels -->
+    <icon src="img/icons/android/xxxhdpi.png" gap:platform="android" gap:density="xxxhdpi" /> <!-- 192 pixels -->
+        
+      
+    <!-- SPLASH SCREENS -->
+        
+    <gap:splash src="splash.png" /> <!-- default 320x480 pixels -->
+        
+    <gap:splash src="img/splash/android/ldpi.png" gap:platform="android" gap:density="ldpi" /> <!-- 200x320 -->
+    <gap:splash src="img/splash/android/mdpi.png" gap:platform="android" gap:density="mdpi" /> <!-- 320x480 -->
+    <gap:splash src="img/splash/android/hdpi.png" gap:platform="android" gap:density="hdpi" /> <!-- 480x800 -->
+    <gap:splash src="img/splash/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" /> <!-- 720x1280 -->
+        
+ 
+    <!-- PLATFORM SELECTION -->
 
 
     <gap:platform name="android" />
+    
+
+        
+    <!-- GENERAL PREFERENCES -->
+        
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="true" /> <!-- remove the upper bar on iOS and Android -->
+
+    <!-- ANDROID PREFERENCES -->
+        
+    <preference name="android-minSdkVersion" value="7" /> <!-- minimum Android 2.1 -->
+    <!-- <preference name="android-maxSdkVersion" value="19" /> maximum Android 4.4 -->
+    <preference name="android-targetSdkVersion" value="19" /> <!-- targeting Android 4.4 -->
+    <preference name="android-installLocation" value="auto" />
+    <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+    <preference name="splash-screen-duration" value="5000" />
+
+    <preference name="load-url-timeout" value="20000" />
+        
+
+    <access origin="*" />
+
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    
+<plugin name="Media" value="org.apache.cordova.AudioHandler" />
 
 </widget>

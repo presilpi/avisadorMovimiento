@@ -24,7 +24,7 @@ body{
 
 #cabecera{
 
- height:150px;
+ height:110px;
 
 background: #db4b39; /* Old browsers */
 background: -moz-linear-gradient(left,  #db4b39 2%, #a73d60 100%); /* FF3.6+ */
@@ -40,12 +40,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db4b39', end
 }
 
 #usuario{
-  font-size:16px;
-  padding:10px;
-}
-#fecha{
   font-size:35px;
   text-align:center;
+  
+}
+#fecha{
+  font-size:16px;
+  padding:20px;
 }
 #dia{
   font-size:14px;
@@ -154,9 +155,72 @@ left:33px;
  display:none;
 }
 
-
-
 #accelerometer{
 font-family:arial;
 }
+
+
+
+
+#tiempo{
+	width:70%;
+	margin:50px auto 10px ;
+	text-align:center;
+}
+
+.spinner {
+  margin: 0 auto;
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+  animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes stretchdelay {
+  0%, 40%, 100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% {
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
+
+
+
 

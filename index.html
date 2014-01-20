@@ -24,11 +24,12 @@ $.support.cors = true;
                 alert('No Internet');
     }else{
        //  alert('Internet Connection there:');
-         
+        
      $.ajax({
      url:"http://escalarencantabria.com/android/WService1.php",
      data: { device: device.uuid },
      dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
+     jsonp: 'jsoncallback',
      success:function(json){
          // do stuff with json (in this case an array)
          // alert( json.nombre );    
@@ -52,8 +53,8 @@ $.support.cors = true;
      }
      
      },
-     error:function(){
-         alert("Error en JSONP");
+     error:function(data){
+         alert("Error en JSONP"+data);
      },
      });
 
@@ -94,9 +95,12 @@ document.getElementById('barra').innerHTML = '<div id="estado">Sistema parado</d
 
 cont=0;
 
+navigator.notification.vibrate(400);
+navigator.notification.beep(10);
+
 }
 // playAudio("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
- playAudio("android_asset/www/1.mp3");
+ //playAudio("android_asset/www/1.mp3");
 
 
 }

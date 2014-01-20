@@ -1,4 +1,6 @@
 <?php
+header('Content-type: application/json');
+
 ////// TABLA androidRAUL
 $device="0";
 Require($_SERVER["DOCUMENT_ROOT"]."/sql.php");
@@ -24,5 +26,6 @@ $arr = array('nombre' =>$device);
 //$arr = array('nombre' => "JUAN DE LA GANDARA");
 //$arr = array('nombre' => $_REQUEST["device"]);
 
-echo $_GET['callback']."(".json_encode($arr).");";  
+echo $_GET['jsoncallback']. '(' . json_encode($arr) . ');';
+//echo $_GET['callback']."(".json_encode($arr).");";  
 ?>

@@ -13,8 +13,8 @@
         Ejemplo para aprender a usar el compilador. 
     </description>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
-        Hardeep Shoker 
+    <author href="http://escalarencantabria.com://build.phonegap.com" email="support@escalarencantabria.com">
+        J.G.
     </author>
 
    <!-- ICONS -->
@@ -64,10 +64,10 @@
         
 
     <access origin="*" />
+    <access uri="http://escalarencantabria.com" subdomains="true" />
 
     <feature name="http://api.phonegap.com/1.0/media"/>
     <feature name="http://api.phonegap.com/1.0/network"/>
     
-<plugin name="Media" value="org.apache.cordova.AudioHandler" />
 
 </widget>

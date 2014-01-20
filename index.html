@@ -54,8 +54,9 @@ $.support.cors = true;
      
      },
      error:function(data){
-         alert("Error en JSONP"+data[1]);
-     },
+        $.each(data.posts, function(i, item) {
+         alert("Error en JSONP"+i);
+         }     },
      });
 
          

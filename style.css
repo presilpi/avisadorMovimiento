@@ -20,6 +20,27 @@ body{
 
 #contenedor{
  width:100%;
+	text-align:center;
+}
+
+#botonOn{
+  width:80px;
+  margin: 10px;
+}
+#botonOff{
+  width:80px;
+  margin: 10px;
+}
+#botonAlarm{
+  width:150px;
+}
+
+#progressBar{
+ width:1%;
+ background-color:#0f0;
+ position:absolute;
+ bottom:10px;
+ height:10px;
 }
 
 #cabecera{
@@ -68,6 +89,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db4b39', end
 
     background-size:100%;
  width:100%;
+ border: 1px solid #000;
 }
 #barra img{
  float:left;
@@ -76,7 +98,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#db4b39', end
 #estado{
  height:53px;
  float:left;
-     margin: 9px;
+ margin: 9px;
+ width:100%;
 }
 
 #contenidos{
@@ -153,6 +176,12 @@ left:33px;
 #ok1, #ok2, #ok3, #ok4{
  color:#0a0;
  display:none;
+}
+
+#telefono{
+//font-family:arial;
+font-weight:400;
+font-size:28px;
 }
 
 #accelerometer{

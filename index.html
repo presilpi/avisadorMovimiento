@@ -17,6 +17,8 @@
 function comprobarConexion(){
 
 var networkState = navigator.network.connection.type;
+$.support.cors = true;
+
 
     if (networkState == Connection.NONE){
                 alert('No Internet');
@@ -32,7 +34,6 @@ var networkState = navigator.network.connection.type;
          // alert( json.nombre );    
      if (json.nombre!="0"){
          document.getElementById('usuario').innerHTML = json.nombre;
-          
      }
      else{
        var person=prompt("Este dispositivo no se encuentra registrado en nuestro sistema, por favor introduzca su nombre","");
@@ -89,7 +90,7 @@ if (watchID) {
 navigator.accelerometer.clearWatch(watchID);
 watchID = null;
 //Actualizamos el boton y texto
-document.getElementById('barra').innerHTML = ' <a href="javascript:startWatch();"><img src="img/off.png" id="onOff"></a><div id="estado">Sistema parado</div>';
+document.getElementById('barra').innerHTML = '<div id="estado">Sistema parado</div>';
 
 cont=0;
 
@@ -130,7 +131,7 @@ startWatch();
 // Start watching the acceleration
 //
 function startWatch() {
-document.getElementById('barra').innerHTML = ' <a href="javascript:stopWatch();"><img src="img/on.png" id="onOff"></a><div id="estado">Sistema encendido<br>Monitorizando actividad</div>';
+document.getElementById('barra').innerHTML = '<div id="estado">Sistema encendido. Monitorizando actividad</div>';
 
 // Update acceleration every 3 seconds
 var options = { frequency: 3000 };
@@ -148,7 +149,7 @@ if (watchID) {
 navigator.accelerometer.clearWatch(watchID);
 watchID = null;
 //Actualizamos el boton y texto
-document.getElementById('barra').innerHTML = ' <a href="javascript:startWatch();"><img src="img/off.png" id="onOff"></a><div id="estado">Sistema parado</div>';
+document.getElementById('barra').innerHTML = ' <a href="javascript:startWatch();"></a><div id="estado">Sistema parado</div>';
 reiniciarProceso();
 
 }
@@ -204,20 +205,24 @@ else{
       }
       else{
         if (cont==1) {
-            document.getElementById('iconGreen1').style.display = "block";
-            document.getElementById('ok1').style.display = "block";
+            document.getElementById('progressBar').style.width = "25%";
+//            document.getElementById('iconGreen1').style.display = "block";
+//            document.getElementById('ok1').style.display = "block";
            }
         if (cont==2) {
-            document.getElementById('iconGreen2').style.display = "block";
-            document.getElementById('ok2').style.display = "block";
+            document.getElementById('progressBar').style.width = "50%";
+//            document.getElementById('iconGreen2').style.display = "block";
+//            document.getElementById('ok2').style.display = "block";
             }
         if (cont==3) {
-            document.getElementById('iconGreen3').style.display = "block";
-            document.getElementById('ok3').style.display = "block";
+            document.getElementById('progressBar').style.width = "725%";
+//            document.getElementById('iconGreen3').style.display = "block";
+//            document.getElementById('ok3').style.display = "block";
             }
         if (cont==4) {
-            document.getElementById('iconGreen4').style.display = "block";
-            document.getElementById('ok4').style.display = "block";
+            document.getElementById('progressBar').style.width = "100%";
+//            document.getElementById('iconGreen4').style.display = "block";
+//            document.getElementById('ok4').style.display = "block";
             activarAlarma();
             }
       
@@ -244,44 +249,36 @@ alert('onError!');
 <body>
 <div id='contenedor'>
 <div id='cabecera'>
-<div id='fecha'>
+  <div id='fecha'>
   <script>
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
 var f=new Date();
 document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 </script>
-  
   </div>
-  <div id='usuario'>23 Diciembre 2013</div>
+  <div id='usuario'>Usuario</div>
 </div>
+
 <div id='barra'></div>
 
-<div id='contenidos'>
-<div id='fase1' class='bgGris'>
-  <div class='izqBg1'>&nbsp;</div>
-  <div class='izq1'><div id='iconGreen1'></div> AVISO DE 15 SEGUNDOS<span id='ok1'>FASE SUPERADA</span></div>
-</div>
-<div id='fase2' class='bgBlanco'>
-  <div class='izqBg2'>&nbsp;</div>
-  <div class='izq1'><div id='iconGreen2'></div> AVISO DE 30 SEGUNDOS<span id='ok2'>FASE SUPERADA</span></div>
-</div>
-<div id='fase3' class='bgGris'>
-  <div class='izqBg3'>&nbsp;</div>
-  <div class='izq1'><div id='iconGreen3'></div> AVISO DE 45 SEGUNDOS<span id='ok3'>FASE SUPERADA</span></div>
-</div>
-<div id='fase4' class='bgBlanco'>
-  <div class='izqBg4'>&nbsp;</div>
-  <div class='izq1'><div id='iconGreen4'></div> AVISO DE 60 SEGUNDOS<span id='ok4'>FASE SUPERADA: ENVIANDO AVISO</span></div>
-</div>
-</div>
 
+<div id='contenedor1'>
+<a href='javascript:startWatch();'><img src='img/on.png' Id='botonOn'></a>
+<a href='javascript:stopWatch();'><img src='img/off.png' Id='botonOff'></a>
+<div>
+<a href='javascript:llanar();'><img src='img/alarm.png'  Id='botonAlarm'></a>
+<div id="telefono">942 222 222</div>
+</div>
 
 <div id="accelerometer">Waiting for accelerometer...</div>
 
-</div>
-<div id="divAudio"></div>
+<div id="progressBar">.</div>
+
+
 </div>
 
-</script>
+</div>
+
+
 </body>
 </html>
